@@ -20,9 +20,25 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
         {
             var bytes = value.GetBytes()
                 .Reverse()
-                .Select(b => b.ToString(ByteFormat + 2));
+                .ToList();
+            RemoveEmptyBytes(bytes);
 
-            return String.Join(" ", bytes);
+            return String.Join(" ", bytes.Select(b => b.ToString(ByteFormat + 2)));
+        }
+
+        private static void RemoveEmptyBytes(List<byte> bytes)
+        {
+            for (int i = 0; i < bytes.Count-1;)
+            {
+                if (bytes[i] == 0)
+                {
+                    bytes.RemoveAt(i);
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
     }
 }
