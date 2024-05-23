@@ -1,6 +1,6 @@
 ﻿using FloatPointNumberStoringDemonstrator.Model.Numbers;
 
-namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
+namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 {
     internal class HexadecimalNumberVm<T> : NumberVm<T>
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using FloatPointNumberStoringDemonstrator.Model.Numbers;
 
-namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
+namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 {
     internal class NumberVm : INotifyPropertyChanged
     {
@@ -22,7 +22,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
         /// Порядок
         /// </summary>
         public virtual string Exponent { get; } = string.Empty;
-        
+
         /// <summary>
         /// Мантисса
         /// </summary>
@@ -37,6 +37,8 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
         /// Длина мантиссы в битах
         /// </summary>
         public virtual string FractionLength { get; } = string.Empty;
+
+        public virtual bool IsValid { get; protected set; } = true;
 
         #endregion Properties
 
@@ -75,10 +77,14 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
         public override string Value
         {
             get => number.Value.ToString();
-            set => number.Value = (T)(object)(double.TryParse(value, out var doubleValue) ? doubleValue : 0);
+            set
+            {
+                IsValid = double.TryParse(value, out var doubleValue);
+                number.Value = (T)(object)(IsValid ? doubleValue : 0);
+            }
         }
 
-        public override string Sign => number.Sign == 0 ? "+" : "-";
+        public override string Sign => number.Sign.ToString();
 
         public override string Exponent => number.Exponent.ToString();
 
@@ -96,6 +102,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
             RaisePropertyChanged(nameof(Sign));
             RaisePropertyChanged(nameof(Exponent));
             RaisePropertyChanged(nameof(Fraction));
+            RaisePropertyChanged(nameof(IsValid));
         }
     }
 }

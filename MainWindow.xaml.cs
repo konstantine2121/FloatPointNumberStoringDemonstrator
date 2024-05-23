@@ -14,9 +14,9 @@ namespace FloatPointNumberStoringDemonstrator
             Model.Numbers.Double model = new Model.Numbers.Double();
             model.Value = 5;
 
-            var vm = new ViewModel.Numbers.BinaryNumberVm<double>(model);
+            var vm = new ViewModel.Numbers.Simple.BinaryNumberVm<double>(model);
 
-            value.DataContext = vm;
+            binaryDoubleView.DataContext = vm;
         }
     }
 }
