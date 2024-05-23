@@ -97,7 +97,7 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
         {
             var value = GetValue();
             var mask = CreateMask(maskLengthInBits) << leftOffset;
-            var maskedValue = (value | mask) >> leftOffset;
+            var maskedValue = (value & mask) >> leftOffset;
 
             return maskedValue;
         }

@@ -11,8 +11,8 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
         {
         }
 
-        public override string Exponent => number.Exponent.ToString(BinaryFormat);
+        public override string Exponent => number.Exponent.ToString(BinaryFormat+ExponentLength);
 
-        public override string Fraction => number.Fraction.ToString(BinaryFormat);
+        public override string Fraction => number.Fraction.ToString(BinaryFormat+FractionLength);
     }
 }

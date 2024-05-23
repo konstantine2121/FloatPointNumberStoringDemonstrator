@@ -12,12 +12,14 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5 px"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5 px"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Column="0" x:Name="sign" Text="{Binding Sign}"/>
-        <TextBlock Grid.Column="1" x:Name="exponent" Text="{Binding Exponent}"/>
-        <TextBlock Grid.Column="2" x:Name="fraction" Text="{Binding Fraction}"/>
+        <TextBlock Grid.Column="2" x:Name="exponent" Text="{Binding Exponent}"/>
+        <TextBlock Grid.Column="4" x:Name="fraction" Text="{Binding Fraction}"/>
     </Grid>
 </UserControl>
