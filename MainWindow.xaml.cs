@@ -10,6 +10,13 @@ namespace FloatPointNumberStoringDemonstrator
         public MainWindow()
         {
             InitializeComponent();
+
+            Model.Numbers.Double model = new Model.Numbers.Double();
+            model.Value = 5;
+
+            var vm = new ViewModel.Numbers.BinaryNumberVm<double>(model);
+
+            value.DataContext = vm;
         }
     }
 }

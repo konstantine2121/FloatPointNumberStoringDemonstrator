@@ -1,4 +1,4 @@
-﻿namespace NumericStoringDemonstration.Model.Numbers
+﻿namespace FloatPointNumberStoringDemonstrator.Model.Numbers
 {
     internal class Single : BaseNumber<float>
     {

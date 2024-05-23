@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NumericStoringDemonstration.Model.Numbers
+namespace FloatPointNumberStoringDemonstrator.Model.Numbers
 {
     internal class Double : BaseNumber<double>
     {

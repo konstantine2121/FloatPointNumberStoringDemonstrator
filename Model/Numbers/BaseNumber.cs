@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NumericStoringDemonstration.Model.Numbers
+namespace FloatPointNumberStoringDemonstrator.Model.Numbers
 {
     internal abstract class BaseNumber<T>
     {

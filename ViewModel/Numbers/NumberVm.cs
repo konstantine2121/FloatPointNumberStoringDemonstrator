@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using NumericStoringDemonstration.Model.Numbers;
+using FloatPointNumberStoringDemonstrator.Model.Numbers;
 
-namespace NumericStoringDemonstration.ViewModel.Numbers
+namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
 {
     internal class NumberVm : INotifyPropertyChanged
     {

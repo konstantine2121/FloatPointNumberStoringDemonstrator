@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
-using NumericStoringDemonstration.Model.Numbers;
+using FloatPointNumberStoringDemonstrator.Model.Numbers;
 
-namespace NumericStoringDemonstration.ViewModel.Numbers
+namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers
 {
     internal class BinaryNumberVm<T> : NumberVm<T>
     {
