@@ -2,7 +2,7 @@
 
 namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 {
-    internal class HexadecimalNumberVm<T> : NumberVm<T>
+    internal class HexadecimalNumberVm<T> : NumberVm<T> where T : struct
     {
         private const string HexFormat = "X";
 

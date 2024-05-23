@@ -25,6 +25,15 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
             throw new NotSupportedException();
         }
 
+        public static T Cast<T>(this object value)
+        {
+            if (typeof(T) == value.GetType())
+                return (T)value;
 
+            if (typeof(T) == typeof(float) && value is double dv)
+                return (T)(object)(float)dv;                
+
+            throw new NotSupportedException();
+        }
     }
 }

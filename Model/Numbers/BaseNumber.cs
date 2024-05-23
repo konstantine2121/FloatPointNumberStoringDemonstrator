@@ -2,7 +2,7 @@
 
 namespace FloatPointNumberStoringDemonstrator.Model.Numbers
 {
-    internal abstract class BaseNumber<T>
+    internal abstract class BaseNumber<T> where T : struct
     {
         private const int BitsPerByte = 8;
 
@@ -105,7 +105,10 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
         private ulong GetValue()
         {
             var bytes = Value.GetBytes();
-            return BitConverter.ToUInt64(bytes, 0);
+
+            return bytes.Length == sizeof(ulong) ? BitConverter.ToUInt64(bytes, 0)
+                : bytes.Length == sizeof(uint) ? BitConverter.ToUInt32(bytes, 0) 
+                : throw new InvalidCastException();
         }
 
         private ulong CreateMask(byte lengthInBits)

@@ -2,7 +2,7 @@
 
 namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 {
-    internal class BinaryNumberVm<T> : NumberVm<T>
+    internal class BinaryNumberVm<T> : NumberVm<T> where T : struct
     {
         private const string BinaryFormat = "B";
 

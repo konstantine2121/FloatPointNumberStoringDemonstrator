@@ -6,9 +6,20 @@
         xmlns:local="clr-namespace:FloatPointNumberStoringDemonstrator"
         xmlns:views="clr-namespace:FloatPointNumberStoringDemonstrator.View.Numbers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="420" Width="670">
     <Grid>
-        <views:NumberView x:Name="binaryDoubleView"></views:NumberView>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="double" Grid.Row="0">
+            <views:CompositeNumberView  x:Name="doubleView"/>
+        </GroupBox>
+
+        <GroupBox Header="single" Grid.Row="1">
+            <views:CompositeNumberView  x:Name="singleView"/>
+        </GroupBox>
+
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using FloatPointNumberStoringDemonstrator.Model.Numbers;
-using FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple;
+﻿using FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple;
 
 namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
 {

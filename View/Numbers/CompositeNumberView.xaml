@@ -11,6 +11,62 @@
              d:DataContext="{d:DesignInstance d:Type=vm:CompositeNumberVm, d:IsDesignTimeCreatable=False}"
              >
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" Text="{Binding DecimalVm.Value, UpdateSourceTrigger=LostFocus}"/>
+            <Button  Grid.Column="1" Content="Обновить"/>
+        </Grid>
+        <Grid Grid.Row="1" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="десятичное" VerticalAlignment="Center"/>
+                <Label Grid.Column="1" Grid.Row="0" Content="{Binding DecimalVm.Sign}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="2" Grid.Row="0" Content="{Binding DecimalVm.Exponent}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="3" Grid.Row="0" Content="{Binding DecimalVm.Fraction}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                
+                <Label Grid.Column="0" Grid.Row="1" Content="шестнадцатеричное" VerticalAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="1" Content="{Binding HexadecimalVm.Sign}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="2" Grid.Row="1" Content="{Binding HexadecimalVm.Exponent}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="3" Grid.Row="1" Content="{Binding HexadecimalVm.Fraction}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                
+                <Label Grid.Column="0" Grid.Row="2"  Content="двоичное" VerticalAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="2" Content="{Binding BinaryVm.Sign}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="2" Grid.Row="2" Content="{Binding BinaryVm.Exponent}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Grid.Column="3" Grid.Row="2" Content="{Binding BinaryVm.Fraction}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+            <Label Grid.Column="1" Grid.Row="3"  Content="знак" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <StackPanel  Grid.Column="2" Grid.Row="3" Orientation="Horizontal" Margin="10">
+                <Label Content="порядок (" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+                <Label  Content="{Binding DecimalVm.ExponentLength}" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+                <Label  Content=" бит)" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+            </StackPanel>
             
+            <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal" Margin="10">
+                <Label Content="мантисса (" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+                <Label  Content="{Binding DecimalVm.FractionLength}" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+                <Label  Content=" бит)" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0"/>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

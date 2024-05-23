@@ -3,13 +3,13 @@ using FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple;
 
 namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
 {
-    internal class DoubleCompositeNumberVm : CompositeNumberVm
+    internal class SingleCompositeNumberVm : CompositeNumberVm
     {
-        public DoubleCompositeNumberVm(BaseNumber<double> number) 
+        public SingleCompositeNumberVm(BaseNumber<float> number)
         {
-            HexadecimalVm = new HexadecimalNumberVm<double>(number);
-            DecimalVm = new NumberVm<double>(number);
-            BinaryVm = new BinaryNumberVm<double>(number);
+            HexadecimalVm = new HexadecimalNumberVm<float>(number);
+            DecimalVm = new NumberVm<float>(number);
+            BinaryVm = new BinaryNumberVm<float>(number);
         }
 
         public override NumberVm BinaryVm { get; }

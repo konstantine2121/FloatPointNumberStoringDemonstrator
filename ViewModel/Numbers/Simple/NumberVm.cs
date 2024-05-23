@@ -1,11 +1,17 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.Globalization;
 using FloatPointNumberStoringDemonstrator.Model.Numbers;
 
 namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 {
     internal class NumberVm : INotifyPropertyChanged
     {
+        #region Fields
+
+        protected readonly string decimalSeparator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+
+        #endregion Fields
+
         #region Properties
 
         /// <summary>
@@ -54,7 +60,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
         #endregion Events
     }
 
-    internal class NumberVm<T> : NumberVm
+    internal class NumberVm<T> : NumberVm where T : struct
     {
         #region Fields
 
@@ -79,8 +85,9 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
             get => number.Value.ToString();
             set
             {
-                IsValid = double.TryParse(value, out var doubleValue);
-                number.Value = (T)(object)(IsValid ? doubleValue : 0);
+                value = value.Replace(".", decimalSeparator).Replace(",", decimalSeparator);
+                IsValid = double.TryParse(value, out var doubleValue);                
+                number.Value = (IsValid ? doubleValue : 0).Cast<T>();
             }
         }
 
