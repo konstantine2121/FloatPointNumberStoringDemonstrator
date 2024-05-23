@@ -10,6 +10,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
             HexadecimalVm = new HexadecimalNumberVm<double>(number);
             DecimalVm = new NumberVm<double>(number);
             BinaryVm = new BinaryNumberVm<double>(number);
+            BytesVm = new BytesNumberVm<double>(number);
         }
 
         public override NumberVm BinaryVm { get; }
@@ -17,5 +18,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
         public override NumberVm HexadecimalVm { get; }
 
         public override NumberVm DecimalVm { get; }
+
+        public override NumberVm BytesVm { get; }
     }
 }

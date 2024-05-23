@@ -9,5 +9,7 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
         public abstract NumberVm HexadecimalVm { get; }
 
         public abstract NumberVm DecimalVm { get; }
+
+        public abstract NumberVm BytesVm { get; }
     }
 }

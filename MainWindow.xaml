@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FloatPointNumberStoringDemonstrator"
         xmlns:views="clr-namespace:FloatPointNumberStoringDemonstrator.View.Numbers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="420" Width="670">
+        Title="MainWindow" Height="500" Width="670">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

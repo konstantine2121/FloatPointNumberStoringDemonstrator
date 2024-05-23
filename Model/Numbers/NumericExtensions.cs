@@ -14,6 +14,16 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
             return BitConverter.GetBytes(value);
         }
 
+        public static byte[] GetBytes(this ulong value)
+        {
+            return BitConverter.GetBytes(value);
+        }
+
+        public static byte[] GetBytes(this long value)
+        {
+            return BitConverter.GetBytes(value);
+        }
+
         public static byte[] GetBytes(this object value)
         {
             if (value is double d)
@@ -21,6 +31,12 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
 
             if (value is float f)
                 return GetBytes(f);
+
+            if (value is long l)
+                return GetBytes(l);
+
+            if (value is ulong ul)
+                return GetBytes(ul);
 
             throw new NotSupportedException();
         }
