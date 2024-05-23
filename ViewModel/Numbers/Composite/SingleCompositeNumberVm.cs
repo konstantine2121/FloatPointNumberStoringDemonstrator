@@ -7,15 +7,12 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Composite
     {
         public SingleCompositeNumberVm(BaseNumber<float> number)
         {
-            HexadecimalVm = new HexadecimalNumberVm<float>(number);
             DecimalVm = new NumberVm<float>(number);
             BinaryVm = new BinaryNumberVm<float>(number);
             BytesVm = new BytesNumberVm<float>(number);
         }
 
         public override NumberVm BinaryVm { get; }
-
-        public override NumberVm HexadecimalVm { get; }
 
         public override NumberVm DecimalVm { get; }
 
