@@ -15,7 +15,6 @@ namespace FloatPointNumberStoringDemonstrator.ViewModel.Numbers.Simple
 
         public override string Fraction => GetBytesString(number.Fraction);
 
-
         private string GetBytesString(ulong value)
         {
             var bytes = value.GetBytes()

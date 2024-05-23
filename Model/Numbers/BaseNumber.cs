@@ -6,7 +6,6 @@ namespace FloatPointNumberStoringDemonstrator.Model.Numbers
     {
         private const int BitsPerByte = 8;
 
-
         #region Fields
 
         private T _value = default;
